@@ -1,5 +1,5 @@
 <body 
-background-image:"{{ url_for('static', filename='images/image.jpg');
+"background:url(image.jpg)"
 background-position: center center;
 background-size: 100% 100%;
 }}"> 
