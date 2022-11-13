@@ -3,32 +3,34 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="shrink-to-fit, initial-scale=1, shrink-to-fit=yes">
+    <meta name="viewport" content="shrink-to-fit, initial-scale=1, shrink-to-fit=no">
     <link rel = "stylesheet" href="{{ url_for('static' , filename='css/style.css') }}" >
     
     <title> Food Recommender Platform- {{ title }} </title>
     
-<style>
+    <style>
      body {
-       background: black;
-       color: grey;
+       background: Orange;
+       color: blue;
        }
-</style>   
+    </style>   
     
 </head>
     
     <div class="container align-items-left">    
-            <h1 style="color: rgb(0, 255, 42); font-weight: bolder; font-size: 50px;"> Hey Foodies!!! <span style="color: rgb(114, 235, 225);"> Wake up your Taste buds Guys!!</span> </h1>
-            <p class="lead" style="color: rgb(0, 255, 42);font-weight: bolder; font-size: 25px;">Willing to eat more Variety of foods????<span style="color: rgb(0, 45, 255); font-weight: bolder; font-size: 35px;">Welcome to "The Kingdom of Food Recommender Platform"🤴</p><br />
-            <p><strong><span style="color: rgb(234, 49, 73); font-size: 30px;">Here you go!!!</strong><span style="color: rgb(234, 49, 73); font-size: 30px;"> <b>Food Recommender Platform</b></span><strong> <span style="color: rgb(234, 49, 73); font-size: 30px;">serves you the best options!!! Choose your favourite food!!</strong></p>
+            <h1 style="color: rgb(0, 255, 42); font-weight: bolder; font-size: 50px;"> <marquee> Hey Foodies!!! <span style="color: rgb((0, 255, 42);"> Wake up your Taste buds Guys!!</span>  </marquee></h1>
+            <p class="lead" style="color: rgb(0,0,205);font-weight: bolder; font-size: 25px;">Willing to eat more Variety of foods????<span style="color: rgb(0,0,205); font-weight: bolder; font-size: 25px;">Welcome to "The Kingdom of Food Recommender Platform"🤴</p><br />
+            <p><strong><span style="color: rgb(0,0,205); font-size: 30px;">Here you go!!!</strong><span style="color: rgb(0,0,205); font-size: 30px;"> <b>Food Recommender Platform</b></span><strong> <span style="color: rgb(0,0,205); font-size: 30px;">serves you the best options!!! Choose your favourite food!!</strong></p>
             <br />
             
     <img src = "{{ url_for('static' , filename='image/image.jpg') }}" alt=" ">        
   
 <form action="{{url_for('predict')}}"method="post">
 <body>
+<div style="width: 100%;">
+        <div style="width: 50%; height: 100px; float: right">
 <label for="Category">
-  <h1 style="color: rgb(114, 235, 225); font-weight: bolder; font-size: 20px;"> What is your Preferred Meal Type? </h1>
+  <h1 style="color: rgb(47, 89, 90); font-weight: bolder; font-size: 20px;"> What is your Preferred Meal Type? </h1>
 
   <select name="PreferredMealType">
   <option value="0">Breakfast</option>
@@ -39,16 +41,18 @@
           </p>
           <p>
           <label for="Category">
-            <h1 style="color: rgb(114, 235, 225); font-weight: bolder; font-size: 20px;"> What is your Preferred Food Type? </h1>
+            <h1 style="color: rgb(47, 89, 90); font-weight: bolder; font-size: 20px;"> What is your Preferred Food Type? </h1>
         
           <select name="PreferredFoodType">
 <option value="0">Non-Veg</option>
 <option value="1">Veg</option> 
           </select>
+
           </p>
           <p>
+</div>
           <label for="Category">
-            <h1 style="color: rgb(114, 235, 225); font-weight: bolder; font-size: 20px;"> Pick your Preferred MainIngredient? </h1>
+            <h1 style="color: rgb(47, 89, 90); font-weight: bolder; font-size: 20px;"> Pick your Preferred MainIngredient? </h1>
           
           <select name="MainIngredient">
 <option value="0">almonds</option>
@@ -128,9 +132,8 @@
           </p>
           <p>
     <label for="Category">
-      <h1 style="color: rgb(114, 235, 225); font-weight: bolder; font-size: 20px;"> Which Ingredient do you Highly prefer? </h1>
-
-    <select name="HighlypreferredIngredient">
+      <h1 style="color: rgb(47, 89, 90); font-weight: bolder; font-size: 20px;"> Which Ingredient do you Highly prefer? </h1>
+       <select name="HighlypreferredIngredient">
 <option value="0">almonds</option>
 <option value="1">amchoor</option>
 <option value="2">apples</option>
@@ -216,9 +219,10 @@
 </select>
           </p>
           <p>
+ 
           <label for="Category">
-            <h1 style="color: rgb(114, 235, 225); font-weight: bolder; font-size: 20px;"> Which Ingredient do you least prefer? </h1>
-          
+            <h1 style="color: rgb(47, 89, 90); font-weight: bolder; font-size: 20px;"> Which Ingredient do you least prefer? </h1>
+     
           <select name="LowpreferredIngredient">
 <option value="0">aromaticpowder</option>
 <option value="1">bakingsoda</option>
@@ -262,9 +266,11 @@
           </p>
 <br>
           <p>
+
           <button type="submit" class="btn btn-primary btn-block btn-large">Enjoy your Recommended foods!!</button>
+         
    </form>
-  <h1 style="color: rgb(0, 190, 42); font-weight: bolder; font-size: 20px;"> {{ prediction_text }}</h1>
+  <h1 style="color: rgb(47, 89, 90); font-weight: bolder; font-size: 20px;"> {{ prediction_text }}</h1>
  </div>
 </body>
 </html>
